@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.myandroidtest.fragment.MainFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_FastFragment"
+            app:destination="@id/FastFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_FirstFragment_to_LargeViewFragment"
+            app:destination="@id/LargeViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_FirstFragment_to_CustomViewFragment"
+            app:destination="@id/CustomViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/FastFragment"
+        android:name="com.example.myandroidtest.fragment.FastFragment"
+        android:label="@string/fastFragment_fragment_label"
+        tools:layout="@layout/fragment_fast" />
+    <fragment
+        android:id="@+id/LargeViewFragment"
+        android:name="com.example.myandroidtest.fragment.LargeImageViewFragment"
+        android:label="@string/largeViewFragment_fragment_label"
+        tools:layout="@layout/fragment_fast" />
+    <fragment
+        android:id="@+id/CustomViewFragment"
+        android:name="com.example.myandroidtest.fragment.CustomViewFragment"
+        android:label="@string/CustomViewFragment_fragment_label"
+        tools:layout="@layout/fragment_fast" >
+        <action
+            android:id="@+id/action_CustomViewFragment_to_DetailViewFragment"
+            app:destination="@id/DetailViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DetailViewFragment"
+        android:name="com.example.myandroidtest.fragment.DetailViewFragment"
+        tools:layout="@layout/fragment_fast" />
+</navigation>

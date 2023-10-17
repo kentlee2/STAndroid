@@ -1,0 +1,129 @@
+import groovy.json.JsonSlurper
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.qfh.cusplugin'//自定义插件
+}
+apply from: rootProject.file('config.gradle')
+//调用maven插件，用于发布
+apply plugin: 'maven-publish'
+
+def library = project.dependency
+def channels = project.channel
+//router {
+//    wikiDir getRootDir().absolutePath
+//}
+myextension{
+    appName 'renxh'
+    channelCode "fds"
+}
+publishing {
+    repositories {
+        maven {
+            //设置发布路径为工程根目录下面的 repo文件夹
+            url = uri('../repo')
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            //设置groupId，通常为包名
+            groupId = 'com.qfh.route'
+            //设置artifactId，为当前插件的名称
+            artifactId = 'router-gradle-plugin'
+            version = '1.0.0'
+        }
+    }
+}
+android {
+    namespace 'com.example.myandroidtest'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.myandroidtest"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    productFlavors{
+//        mm1 {
+//            JSONObject jsonObject = getDeploy("mm1")
+//            resValue "string", "app_name", "测试okx"
+//            applicationId "com.mm1.momo1.test"
+//            versionName = "1.2.4"
+//            versionCode = 124
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: jsonObject.channelCode]
+//            buildConfigField "String", "BASE_URL", "\"https://kbackend.sjhwrffs.top\""//测试服
+//        }
+        mm1{
+            def jsonObject = parseJson(channels["mm1"])
+            buildConfigField "String", "CHANNEL_CODE", "\"$jsonObject.channelCode\""
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: jsonObject.channelCode]
+            resValue "string", "app_name", "${jsonObject.appName}"
+            applicationId jsonObject.applicationId
+            versionName = "1.2.3"
+            versionCode = 123
+
+            // 线上环境
+            buildConfigField "String[]", "HOST_ARRAY", "{" +
+                    "\"https://www.baidu.com\"," +
+                    "\"https://www.google.com\"," +
+                    "\"https://longfengshan.net/text/momo.txt\"}"
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'boolean', 'IS_DEBUG', 'false'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'boolean', 'IS_DEBUG', 'true'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding = true
+        buildConfig true
+    }
+    flavorDimensions "default"
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.github.hegaojian:JetpackMvvm:1.2.7'
+
+    library.each { k, v -> implementation v }
+}
+
+ def parseJson(String flavor){
+    File fileName = file(flavor)
+    String fileContent = fileName.text.trim()
+    def jsonObject = new JsonSlurper().parseText(fileContent)
+    return jsonObject
+}
+

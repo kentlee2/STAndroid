@@ -1,0 +1,28 @@
+ext {
+    dependency = [
+            "retrofit2-retrofit"       : "com.squareup.retrofit2:retrofit:2.9.0",
+            "retrofit2-converter-gson" : 'com.squareup.retrofit2:converter-gson:2.9.0',
+            "retrofit2-adapter-rxjava2": 'com.squareup.retrofit2:adapter-rxjava2:2.9.0',
+            "kotlinx-coroutines-core" :"org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0", // 协程(版本自定)
+            "kotlinx-coroutines": 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0',
+            "okhttp3" :'com.squareup.okhttp3:okhttp:4.10.0', // 要求OkHttp4以上
+            "Net" :'com.github.liangjingkanji:Net:3.5.9',
+            "okhttpprofiler" :'com.localebro:okhttpprofiler:1.0.8',
+            "brv":  'com.github.liangjingkanji:BRV:1.5.0',
+            "dialogs-core": "com.afollestad.material-dialogs:core:3.3.0",
+            "dialogs-color ":"com.afollestad.material-dialogs:color:3.3.0",
+            "dialogs-lifecycle": "com.afollestad.material-dialogs:lifecycle:3.3.0",
+            "glide": "com.github.bumptech.glide:glide:4.16.0",
+            "glide-transformations": 'jp.wasabeef:glide-transformations:4.3.0',
+            "utilcodex": 'com.blankj:utilcodex:1.31.1',
+            "subsampling":'com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0',
+            "glide:okhttp3": "com.github.bumptech.glide:okhttp3-integration:4.11.0"
+    ]
+    channel = [
+            "mm1": "src/main/assets/deploy1.json",
+
+    ]
+
+}
+
+

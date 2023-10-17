@@ -1,0 +1,13 @@
+//引用groovy插件，编译插件工程中的代码
+apply plugin: 'groovy'//必须
+
+
+//声明仓库的地址
+repositories {
+    mavenCentral()//必须
+}
+//声明依赖的包
+dependencies{
+    implementation gradleApi()//必须
+    implementation localGroovy()//必须
+}

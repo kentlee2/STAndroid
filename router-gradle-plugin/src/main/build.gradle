@@ -1,0 +1,35 @@
+//引用groovy插件，编译插件工程中的代码
+apply plugin: 'groovy'
+android {
+    compileSdk cfg.android.compileSdk
+
+    defaultConfig {
+        applicationId cfg.applicationId.app
+        minSdk cfg.android.minSdk
+        targetSdk cfg.android.targetSdk
+        versionCode cfg.android.versionCode
+        versionName cfg.android.versionName
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+//声明仓库的地址
+repositories {
+    mavenCentral()
+}
+//声明依赖的包
+dependencies{
+    implementation gradleApi()
+    implementation localGroovy()
+}
