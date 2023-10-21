@@ -10,13 +10,15 @@ import com.example.myandroidtest.base.BaseActivity
 import com.example.myandroidtest.databinding.ActivityTestBinding
 
 
-class TestActivity : BaseActivity<TestViewModel,ActivityTestBinding>() {
+class TestActivity : BaseActivity<TestViewModel, ActivityTestBinding>() {
     val viewModel: TestViewModel by viewModels()
     override fun initView(savedInstanceState: Bundle?) {
         val mAdapter = ScreenSlidePagerAdapter(this)
         mDatabind.mainPager.apply {
             offscreenPageLimit = 1
             adapter = mAdapter
+            //是否可滑动
+            isUserInputEnabled = false
         }
         mDatabind.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {

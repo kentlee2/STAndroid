@@ -1,41 +1,33 @@
 package com.example.myandroidtest.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.example.myandroidtest.NetLegacy
+import android.text.Html
+import androidx.lifecycle.Observer
+import com.covy.common.base.fragment.BaseVmVbFragment
+import com.example.myandroidtest.base.BaseFragment1
 import com.example.myandroidtest.databinding.FragmentFastBinding
+import com.example.myandroidtest.viewmodel.FastViewModel
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
-class FastFragment : Fragment() {
 
-    private var _binding: FragmentFastBinding? = null
+class FastFragment : BaseFragment1<FastViewModel, FragmentFastBinding>() {
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-
-        _binding = FragmentFastBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun initView(savedInstanceState: Bundle?) {
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        NetLegacy.net(binding)
+
+    override fun lazyLoadData() {
+        showLoading()
+        mViewModel.requestTest()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun createObserver() {
+        mViewModel.urlResult.observe(this, Observer {
+            dismissLoading()
+            mViewBind.textviewFast.text = Html.fromHtml(it)
+        })
     }
+
+
 }

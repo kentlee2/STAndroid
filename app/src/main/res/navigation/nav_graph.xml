@@ -24,14 +24,14 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_FirstFragment_to_CustomViewFragment"
             app:destination="@id/CustomViewFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/FastFragment"
@@ -42,18 +42,28 @@
         android:id="@+id/LargeViewFragment"
         android:name="com.example.myandroidtest.fragment.LargeImageViewFragment"
         android:label="@string/largeViewFragment_fragment_label"
-        tools:layout="@layout/fragment_fast" />
+        tools:layout="@layout/fragment_large_view" />
     <fragment
         android:id="@+id/CustomViewFragment"
         android:name="com.example.myandroidtest.fragment.CustomViewFragment"
         android:label="@string/CustomViewFragment_fragment_label"
-        tools:layout="@layout/fragment_fast" >
+        tools:layout="@layout/fragment_custom_view">
         <action
             android:id="@+id/action_CustomViewFragment_to_DetailViewFragment"
-            app:destination="@id/DetailViewFragment" />
+            app:destination="@id/DetailViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+
+        </action>
+
     </fragment>
     <fragment
         android:id="@+id/DetailViewFragment"
         android:name="com.example.myandroidtest.fragment.DetailViewFragment"
-        tools:layout="@layout/fragment_fast" />
+        android:label="DetailViewFragment"
+        tools:layout="@layout/fragment_detail_view">
+
+    </fragment>
 </navigation>

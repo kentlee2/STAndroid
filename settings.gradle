@@ -12,11 +12,9 @@ dependencyResolutionManagement {
         mavenCentral()
         maven { url 'https://jitpack.io' }
         maven{ url 'https://maven.aliyun.com/repository/jcenter' }
-        maven {
-            url 'https://jitpack.io'
-        }
     }
 }
 rootProject.name = "MyAndroidTest"
 include ':app'
 include 'router-gradle-plugin'
+include ':lib-common'

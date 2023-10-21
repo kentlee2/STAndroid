@@ -1,7 +1,8 @@
 package com.example.myandroidtest
 
 import android.app.Application
-import com.drake.brv.BR
+import androidx.lifecycle.ViewModelStore
+import com.covy.common.base.BaseApp
 import com.drake.brv.utils.BRV
 import com.drake.net.NetConfig
 import com.drake.net.cookie.PersistentCookieJar
@@ -10,7 +11,7 @@ import com.drake.net.okhttp.setDebug
 import okhttp3.Cache
 import java.util.concurrent.TimeUnit
 
-class TestApplication :Application(){
+class TestApplication :BaseApp(){
     override fun onCreate() {
         super.onCreate()
         NetConfig.initialize(Api.HOST, this) {

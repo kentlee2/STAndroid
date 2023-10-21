@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.myandroidtest.fragment.TestFragment
-
+//viewpager2适配器
 class ScreenSlidePagerAdapter(fa: FragmentActivity): FragmentStateAdapter(fa) {
     override fun getItemCount(): Int = 3
 
