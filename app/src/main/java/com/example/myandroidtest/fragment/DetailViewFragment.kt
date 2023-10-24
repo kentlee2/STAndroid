@@ -2,12 +2,15 @@ package com.example.myandroidtest.fragment
 
 
 import android.os.Bundle
+import android.text.TextUtils
+import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.myandroidtest.R
 import com.example.myandroidtest.adapter.MainTabAdapter
 import com.example.myandroidtest.base.BaseFragment1
 import com.example.myandroidtest.bean.MainTabBean
 import com.example.myandroidtest.databinding.FragmentDetailViewBinding
+import com.example.myandroidtest.ext.showLoadingExt
 import com.example.myandroidtest.viewmodel.DetailViewModel
 
 
@@ -16,13 +19,17 @@ import com.example.myandroidtest.viewmodel.DetailViewModel
  * @date 2023/10/17
  */
 class DetailViewFragment : BaseFragment1<DetailViewModel, FragmentDetailViewBinding>() {
-    private var type = 0
+    private var content = ""
+
     // 底部tab数据
     private val tabData = arrayListOf<MainTabBean>()
+
     // ViewPager对应显示的Fragment
     private val fragments = arrayListOf<Fragment>()
     override fun initView(savedInstanceState: Bundle?) {
-        type = arguments?.getInt("type") ?: 0
+        content = arguments?.getString("type") ?: ""
+        if (TextUtils.isEmpty(content)) mViewBind.tv.visibility = View.GONE
+        mViewBind.tv.text = "这是传过来的数据：".plus(content)
         // 底部Tab数据
         tabData.add(MainTabBean("首页", R.drawable.home, R.drawable.home_select))
         tabData.add(MainTabBean("导航", R.drawable.video, R.drawable.video_select))

@@ -22,7 +22,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="XTabLayout" />
-
+        <Button
+            android:id="@+id/motion_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MotionLayout" />
     </LinearLayout>
 
 </ScrollView>

@@ -10,7 +10,7 @@ import com.example.myandroidtest.ext.showLoadingExt
 
 /**
  * 时间　: 2019/12/21
- * 描述　: 项目中的Fragment基类，在这里实现显示弹窗，吐司，还有自己的需求操作 使用ViewBinding请继承
+ * 描述　: 项目中的Fragment基类，在这里实现显示弹窗，吐司，还有自己的需求操作。 使用ViewBinding请继承
  * abstract class BaseFragment<VM : BaseViewModel> : BaseVmFragment<VM>() {
  */
 abstract class BaseFragment1<VM : BaseViewModel, VB : ViewBinding> : BaseVmVbFragment<VM, VB>() {

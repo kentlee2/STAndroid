@@ -14,13 +14,13 @@ ext {
             "dialogs-lifecycle"        : "com.afollestad.material-dialogs:lifecycle:3.3.0",
             "glide"                    : "com.github.bumptech.glide:glide:4.16.0",
             "glide-transformations"    : 'jp.wasabeef:glide-transformations:4.3.0',
-            "utilcodex"                : 'com.blankj:utilcodex:1.31.1',
-            "subsampling"              : 'com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0',
+            "utilcodex"                : 'com.blankj:utilcodex:1.31.1',  //工具类库
+            "subsampling"              : 'com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0', //大图加载
             "glide-okhttp3"            : "com.github.bumptech.glide:okhttp3-integration:4.11.0",
-            "navigation-fragment"      : 'androidx.navigation:navigation-fragment-ktx:2.6.0',
-            "navigation-ui"            : 'androidx.navigation:navigation-ui-ktx:2.6.0',
+            "navigation-fragment"      : 'androidx.navigation:navigation-fragment-ktx:2.6.0', //导航
+            "navigation-ui"            : 'androidx.navigation:navigation-ui-ktx:2.6.0', //导航
             "unpeek-livedata"          : 'com.kunminx.arch:unpeek-livedata:7.8.0',
-            "retrofit-url-manager"     : 'me.jessyan:retrofit-url-manager:1.4.0'
+            "retrofit-url-manager"     : 'me.jessyan:retrofit-url-manager:1.4.0'//动态切换baseUrl
     ]
     channel = [
             "mm1": "src/main/assets/deploy1.json",

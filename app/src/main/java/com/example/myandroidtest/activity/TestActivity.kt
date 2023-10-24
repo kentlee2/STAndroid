@@ -1,25 +1,26 @@
 package com.example.myandroidtest.activity
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
+import com.covy.common.base.viewmodel.BaseViewModel
 import com.example.myandroidtest.R
-import com.example.myandroidtest.TestViewModel
-import com.example.myandroidtest.adapter.ScreenSlidePagerAdapter
 import com.example.myandroidtest.base.BaseActivity
 import com.example.myandroidtest.databinding.ActivityTestBinding
+import com.example.myandroidtest.ext.init
+import com.example.myandroidtest.fragment.TestFragment
 
 
-class TestActivity : BaseActivity<TestViewModel, ActivityTestBinding>() {
-    val viewModel: TestViewModel by viewModels()
+class TestActivity : BaseActivity<BaseViewModel, ActivityTestBinding>() {
     override fun initView(savedInstanceState: Bundle?) {
-        val mAdapter = ScreenSlidePagerAdapter(this)
-        mDatabind.mainPager.apply {
-            offscreenPageLimit = 1
-            adapter = mAdapter
-            //是否可滑动
-            isUserInputEnabled = false
-        }
+
+        mDatabind.mainPager.init(
+            this,
+            arrayListOf(
+                TestFragment.newInstance(0),
+                TestFragment.newInstance(1),
+                TestFragment.newInstance(2),
+            ),
+        )
         mDatabind.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_home -> {

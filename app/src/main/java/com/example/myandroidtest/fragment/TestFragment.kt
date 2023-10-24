@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.myandroidtest.adapter.ScreenSlidePagerAdapter2
 import com.example.myandroidtest.databinding.FragmentTestBinding
+import com.example.myandroidtest.ext.init
 
 class TestFragment : Fragment() {
 
@@ -37,8 +37,21 @@ class TestFragment : Fragment() {
         arguments?.getInt("type").let {
             if (it == 0) {
                 binding.tv.visibility = View.GONE
-                val adapter = ScreenSlidePagerAdapter2(requireActivity())
-                binding.vPager.adapter = adapter
+                binding.vPager.init(
+                    requireActivity(),
+                    arrayListOf(
+                        TestNewFragment.newInstance(0),
+                        TestNewFragment.newInstance(1),
+                        TestNewFragment.newInstance(2),
+                    ),
+                    true
+                )
+//                val adapter = ScreenSlidePagerAdapter(requireActivity(),arrayListOf(
+//                    newInstance(0),
+//                    newInstance(1),
+//                    newInstance(2),
+//                ))
+//                binding.vPager.adapter = adapter
             } else {
                 binding.tv.text = it.toString()
             }

@@ -57,6 +57,13 @@
             app:popExitAnim="@anim/slide_out_right">
 
         </action>
+        <action
+            android:id="@+id/action_CustomViewFragment_to_motionLayoutFragment"
+            app:destination="@id/motionLayoutFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
 
     </fragment>
     <fragment
@@ -64,6 +71,10 @@
         android:name="com.example.myandroidtest.fragment.DetailViewFragment"
         android:label="DetailViewFragment"
         tools:layout="@layout/fragment_detail_view">
-
     </fragment>
+    <fragment
+        android:id="@+id/motionLayoutFragment"
+        android:name="com.example.myandroidtest.fragment.MotionLayoutFragment"
+        android:label="MotionLayout"
+        tools:layout="@layout/fragment_motion_layout"/>
 </navigation>

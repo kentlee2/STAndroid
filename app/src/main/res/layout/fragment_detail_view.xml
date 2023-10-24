@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <com.example.myandroidtest.view.DragBtnView
+        android:id="@+id/drag_btn"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@mipmap/btn_icon"
@@ -22,4 +23,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:tabEqual="true"
         app:tabIsScroll="false" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drag_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

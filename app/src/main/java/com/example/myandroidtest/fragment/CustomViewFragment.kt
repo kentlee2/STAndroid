@@ -2,12 +2,10 @@ package com.example.myandroidtest.fragment
 
 import android.os.Bundle
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.covy.common.base.viewmodel.BaseViewModel
 import com.example.myandroidtest.R
 import com.example.myandroidtest.base.BaseFragment1
-import com.example.myandroidtest.bean.MainTabBean
 import com.example.myandroidtest.databinding.FragmentCustomViewBinding
 
 /**
@@ -28,8 +26,11 @@ class CustomViewFragment : BaseFragment1<BaseViewModel, FragmentCustomViewBindin
         mViewBind.tabLayoutBtn.setOnClickListener {
             findNavController().navigate(
                 R.id.action_CustomViewFragment_to_DetailViewFragment,
-                bundleOf("type" to 1)
+                bundleOf("type" to "数据")
             )
+        }
+        mViewBind.motionLayout.setOnClickListener {
+            findNavController().navigate(R.id.action_CustomViewFragment_to_motionLayoutFragment)
         }
     }
 
