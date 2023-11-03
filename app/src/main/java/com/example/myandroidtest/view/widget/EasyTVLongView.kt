@@ -1,4 +1,4 @@
-package com.example.myandroidtest.view
+package com.example.myandroidtest.view.widget
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -16,7 +16,6 @@ import android.widget.Scroller
 import com.blankj.utilcode.util.ScreenUtils
 import com.blankj.utilcode.util.SizeUtils
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.davemorrissey.labs.subscaleview.ImageSource

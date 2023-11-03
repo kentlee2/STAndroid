@@ -14,4 +14,27 @@
         <!--是否可拖曳-->
         <attr name="customIsDrag" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="StackLabel">
+        <attr format="color" name="textColor"/>
+        <attr format="dimension" name="textSize"/>
+        <attr format="dimension" name="paddingVertical"/>
+        <attr format="dimension" name="paddingHorizontal"/>
+        <attr format="dimension" name="itemMargin"/>
+        <attr format="dimension" name="itemMarginVertical"/>
+        <attr format="dimension" name="itemMarginHorizontal"/>
+        <attr format="boolean" name="deleteButton"/>
+
+        <attr format="reference" name="deleteButtonImage"/>
+        <attr format="reference" name="labelBackground"/>
+
+        <attr format="boolean" name="selectMode"/>
+        <attr format="reference" name="selectBackground"/>
+        <attr format="color" name="selectTextColor"/>
+        <attr format="integer" name="maxSelectNum"/>
+        <attr format="integer" name="minSelectNum"/>
+        <attr format="integer" name="maxLines"/>
+
+        <attr format="string" name="labels"/>
+    </declare-styleable>
+
 </resources>

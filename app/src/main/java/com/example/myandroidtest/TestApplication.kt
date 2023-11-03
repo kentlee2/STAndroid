@@ -1,9 +1,6 @@
 package com.example.myandroidtest
-
-import android.app.Application
-import androidx.lifecycle.ViewModelStore
+import com.arialyy.aria.core.Aria
 import com.covy.common.base.BaseApp
-import com.drake.brv.utils.BRV
 import com.drake.net.NetConfig
 import com.drake.net.cookie.PersistentCookieJar
 import com.drake.net.interceptor.LogRecordInterceptor
@@ -12,8 +9,14 @@ import okhttp3.Cache
 import java.util.concurrent.TimeUnit
 
 class TestApplication :BaseApp(){
+    companion object{
+        lateinit var appContext: TestApplication
+    }
+
     override fun onCreate() {
         super.onCreate()
+        appContext = this
+        Aria.init(this)
         NetConfig.initialize(Api.HOST, this) {
 
             // 超时设置

@@ -32,6 +32,9 @@ class CustomViewFragment : BaseFragment1<BaseViewModel, FragmentCustomViewBindin
         mViewBind.motionLayout.setOnClickListener {
             findNavController().navigate(R.id.action_CustomViewFragment_to_motionLayoutFragment)
         }
+        mViewBind.dialog.setOnClickListener {
+            findNavController().navigate(R.id.action_CustomViewFragment_to_absDialogFragment)
+        }
     }
 
 }

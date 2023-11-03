@@ -32,6 +32,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_FirstFragment_to_downloadFragment"
+            app:destination="@id/downloadFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/FastFragment"
@@ -54,27 +61,44 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right">
+            app:popExitAnim="@anim/slide_out_right" />
 
-        </action>
+
         <action
             android:id="@+id/action_CustomViewFragment_to_motionLayoutFragment"
             app:destination="@id/motionLayoutFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_CustomViewFragment_to_absDialogFragment"
+            app:destination="@id/absDialogFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
 
     </fragment>
     <fragment
         android:id="@+id/DetailViewFragment"
         android:name="com.example.myandroidtest.fragment.DetailViewFragment"
         android:label="DetailViewFragment"
-        tools:layout="@layout/fragment_detail_view">
-    </fragment>
+        tools:layout="@layout/fragment_detail_view"/>
     <fragment
         android:id="@+id/motionLayoutFragment"
         android:name="com.example.myandroidtest.fragment.MotionLayoutFragment"
         android:label="MotionLayout"
-        tools:layout="@layout/fragment_motion_layout"/>
+        tools:layout="@layout/fragment_motion_layout" />
+    <fragment
+        android:id="@+id/absDialogFragment"
+        android:name="com.example.myandroidtest.fragment.AbsDialogFragment"
+        android:label="AbsDialogFragment"
+        tools:layout="@layout/fragment_dialog" />
+    <fragment
+        android:id="@+id/downloadFragment"
+        android:name="com.example.myandroidtest.fragment.DownloadFragment"
+        android:label="DownloadFragment"
+        tools:layout="@layout/fragment_download" />
 </navigation>

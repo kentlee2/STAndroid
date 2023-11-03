@@ -20,7 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.example.myandroidtest.view.EasyTVLongView
+        <com.example.myandroidtest.view.widget.EasyTVLongView
             android:id="@+id/image_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

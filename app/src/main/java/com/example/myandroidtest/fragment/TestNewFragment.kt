@@ -34,6 +34,5 @@ class TestNewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tv.text = "子Fragment"+arguments?.getInt("type",0).toString()
     }
 }

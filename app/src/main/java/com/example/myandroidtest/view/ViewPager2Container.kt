@@ -1,12 +1,10 @@
-package com.example.myandroidtest.widget
+package com.example.myandroidtest.view
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.widget.RelativeLayout
 import androidx.viewpager2.widget.ViewPager2
-import kotlinx.coroutines.NonDisposableHandle.parent
-import java.lang.Math.abs
 
 /**
  * 解决viewPager2嵌套滑动冲突

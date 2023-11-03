@@ -20,7 +20,8 @@ ext {
             "navigation-fragment"      : 'androidx.navigation:navigation-fragment-ktx:2.6.0', //导航
             "navigation-ui"            : 'androidx.navigation:navigation-ui-ktx:2.6.0', //导航
             "unpeek-livedata"          : 'com.kunminx.arch:unpeek-livedata:7.8.0',
-            "retrofit-url-manager"     : 'me.jessyan:retrofit-url-manager:1.4.0'//动态切换baseUrl
+            "retrofit-url-manager"     : 'me.jessyan:retrofit-url-manager:1.4.0',//动态切换baseUrl
+            "XXPermissions"            : 'com.github.getActivity:XXPermissions:18.5'//权限请求
     ]
     channel = [
             "mm1": "src/main/assets/deploy1.json",

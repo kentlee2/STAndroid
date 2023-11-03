@@ -5,20 +5,19 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.covy.common.base.viewmodel.BaseViewModel
 import com.example.myandroidtest.R
 import com.example.myandroidtest.adapter.MainTabAdapter
 import com.example.myandroidtest.base.BaseFragment1
 import com.example.myandroidtest.bean.MainTabBean
 import com.example.myandroidtest.databinding.FragmentDetailViewBinding
-import com.example.myandroidtest.ext.showLoadingExt
-import com.example.myandroidtest.viewmodel.DetailViewModel
 
 
 /**
  * @author andy
  * @date 2023/10/17
  */
-class DetailViewFragment : BaseFragment1<DetailViewModel, FragmentDetailViewBinding>() {
+class DetailViewFragment : BaseFragment1<BaseViewModel, FragmentDetailViewBinding>() {
     private var content = ""
 
     // 底部tab数据

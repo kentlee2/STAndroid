@@ -38,12 +38,12 @@ publishing {
 }
 android {
     namespace 'com.example.myandroidtest'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.myandroidtest"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }
@@ -98,8 +98,12 @@ dependencies {
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 //    implementation 'com.github.:JetpackMvvm:1.2.7'
-    implementation 'com.google.android.material:material:1.9.0'
     implementation project(path: ':lib-common')
+    implementation 'me.laoyuyu.aria:core:3.8.16'
+    kapt 'me.laoyuyu.aria:compiler:3.8.16'
+//    implementation 'me.laoyuyu.aria:ftp:3.8.16' //# 如果需要使用ftp，请增加该组件
+//    implementation 'me.laoyuyu.aria:sftp:3.8.16' //# 如果需要使用ftp，请增加该组件
+    implementation 'me.laoyuyu.aria:m3u8:3.8.16' //# 如果需要使用m3u8下载功能，请增加该组件
 }
 
 def parseJson(String flavor){

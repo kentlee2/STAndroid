@@ -1,4 +1,4 @@
-package com.example.myandroidtest.widget;
+package com.example.myandroidtest.view.widget;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

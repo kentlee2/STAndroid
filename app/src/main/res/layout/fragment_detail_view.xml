@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.example.myandroidtest.view.DragBtnView
+    <com.example.myandroidtest.view.widget.DragBtnView
         android:id="@+id/drag_btn"
         android:layout_width="60dp"
         android:layout_height="60dp"
