@@ -10,7 +10,7 @@ import com.example.myandroidtest.R
 import com.example.myandroidtest.base.BaseFragment1
 import com.example.myandroidtest.databinding.FragmentDialogBinding
 import com.example.myandroidtest.view.dialog.MessageDialog
-
+//dialog测试
 class AbsDialogFragment : BaseFragment1<BaseViewModel, FragmentDialogBinding>(),OnClickListener {
     override fun initView(savedInstanceState: Bundle?) {
 

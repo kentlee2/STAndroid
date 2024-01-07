@@ -4,7 +4,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.util.Log;
 
-import com.example.myandroidtest.TestApplication;
+import com.example.myandroidtest.MyApplication;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -36,7 +36,7 @@ public class FileUtil {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
             return Environment.getExternalStorageDirectory().getAbsolutePath();
         } else {
-            return TestApplication.appContext.getExternalFilesDir("file").getAbsolutePath();
+            return MyApplication.appContext.getExternalFilesDir("file").getAbsolutePath();
         }
     }
 

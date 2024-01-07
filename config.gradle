@@ -6,9 +6,9 @@ ext {
             "kotlinx-coroutines-core"  : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0", // 协程(版本自定)
             "kotlinx-coroutines"       : 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0',
             "okhttp3"                  : 'com.squareup.okhttp3:okhttp:4.10.0', // 要求OkHttp4以上
-            "Net"                      : 'com.github.liangjingkanji:Net:3.5.9',
+            "Net"                      : 'com.github.liangjingkanji:Net:3.6.4',
             "okhttpprofiler"           : 'com.localebro:okhttpprofiler:1.0.8',
-            "brv"                      : 'com.github.liangjingkanji:BRV:1.5.0',
+            "brv"                      : 'com.github.liangjingkanji:BRV:1.5.7',
             "dialogs-core"             : "com.afollestad.material-dialogs:core:3.3.0",
             "dialogs-color "           : "com.afollestad.material-dialogs:color:3.3.0",
             "dialogs-lifecycle"        : "com.afollestad.material-dialogs:lifecycle:3.3.0",

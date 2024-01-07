@@ -23,11 +23,11 @@ class FastFragment : BaseFragment1<FastViewModel, FragmentFastBinding>() {
     override fun lazyLoadData() {
         showLoading()
         Looper.myQueue().addIdleHandler(MessageQueue.IdleHandler {
-            ToastUtils.showShort("消息队列空闲的时候执行")
+            LogUtils.debugInfo("TAGS", "消息队列空闲的时候执行")
             //返回 false 表示执行后就将该回调移除掉，返回 true 表示该 IdleHandler 一直处于活跃状态，只要空闲就会被回调
             return@IdleHandler false
         })
-        mViewModel.requestTest()
+        mViewModel.requestTest2()
     }
 
     override fun createObserver() {

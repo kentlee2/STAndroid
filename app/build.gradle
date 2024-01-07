@@ -62,23 +62,39 @@ android {
             buildConfigField "String[]", "HOST_ARRAY", "{" +
                     "\"https://www.google.com\"," +
                     "\"https://www.baidu.com\"," +
+                    "\"https://www.dyxs44.com\"," +
                     "\"https://longfengshan.net/text/momo.txt\"}"
         }
 
+    }
+
+    //签名文件配置
+    signingConfigs{
+        release{
+            storeFile file("../key/project.jks")
+            storePassword "project2222"
+            keyAlias "key0"
+            keyPassword "project2222"
+        }
+        debug{
+            //默认情况下，debug模式下的签名已配置为Android SDK自动生成的debug签名文件证书
+            //默认签名文件位置：.android/debug.keystore
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField 'boolean', 'IS_DEBUG', 'false'
+            signingConfig signingConfigs.release
         }
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField 'boolean', 'IS_DEBUG', 'true'
+            signingConfig signingConfigs.debug
         }
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -104,6 +120,8 @@ dependencies {
 //    implementation 'me.laoyuyu.aria:ftp:3.8.16' //# 如果需要使用ftp，请增加该组件
 //    implementation 'me.laoyuyu.aria:sftp:3.8.16' //# 如果需要使用ftp，请增加该组件
     implementation 'me.laoyuyu.aria:m3u8:3.8.16' //# 如果需要使用m3u8下载功能，请增加该组件
+    implementation 'io.github.happylishang:antifake:1.7.0'
+    api 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
 }
 
 def parseJson(String flavor){
